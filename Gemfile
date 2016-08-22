@@ -15,6 +15,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
+
 # Devise gem for log in
 gem 'devise'
 
