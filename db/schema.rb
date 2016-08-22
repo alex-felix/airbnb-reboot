@@ -10,10 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160822163145) do
+ActiveRecord::Schema.define(version: 20160822164509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attendances", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.date     "confirmed_at"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["event_id"], name: "index_attendances_on_event_id", using: :btree
+    t.index ["user_id"], name: "index_attendances_on_user_id", using: :btree
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "interests",   default: [],              array: true
+    t.date     "starts_at"
+    t.date     "ends_at"
+    t.integer  "location_id"
+    t.integer  "user_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["location_id"], name: "index_events_on_location_id", using: :btree
+    t.index ["user_id"], name: "index_events_on_user_id", using: :btree
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string   "name"
+    t.text     "decription"
+    t.string   "address"
+    t.string   "postcode"
+    t.string   "country"
+    t.integer  "capacity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -32,4 +67,8 @@ ActiveRecord::Schema.define(version: 20160822163145) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "attendances", "events"
+  add_foreign_key "attendances", "users"
+  add_foreign_key "events", "locations"
+  add_foreign_key "events", "users"
 end
