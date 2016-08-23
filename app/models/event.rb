@@ -6,6 +6,5 @@ class Event < ApplicationRecord
   belongs_to :location
   belongs_to :user
   validates :user, :location, :start_time, :end_time, presence: true
-  CATEGORIES = %w(outdoors citytrip sport nightlife home)
-  validates :category, inclusion: { in: CATEGORIES }
+  validates :interests, inclusion: { in: %w(outdoors citytrip sport nightlife home) }
 end
