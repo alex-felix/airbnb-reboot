@@ -15,7 +15,7 @@ Event.create!(title: "Club at Mayfair", description: "I have money, I got a tabl
 
 
 
-3.times do
+7.times do
   user = User.new(
     first_name: Faker::Name.first_name, #=> "Kaci",
     last_name: Faker::Name.last_name, #=> "Ernser",
@@ -32,7 +32,7 @@ Event.create!(title: "Club at Mayfair", description: "I have money, I got a tabl
 end
 
 
-3 .times do
+7.times do
   event = Event.new(
     title: Faker::Lorem.word,
     description: Faker::Lorem.characters(30),
