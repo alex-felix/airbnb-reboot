@@ -1,0 +1,16 @@
+<h2 class="text-center">Keep it real!</h2>
+<h2 class="text-center">Find a cool event or post yours!</h2>
+<h2 class="text-center">Make new friends today</h2>
+<div class="text-center">
+  <%= link_to "Quickly add an event", new_event_path, class: "btn btn-success"%>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @events.each do |c| %>
+      <div class="col-xs-12 col-sm-4">
+        <%= render "card", event: c %>
+      </div>
+    <% end %>
+  </div>
+</div>
