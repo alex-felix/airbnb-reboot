@@ -9,10 +9,10 @@
 
 <div class="container">
   <div class="row">
-    <% @events.each do |e| %>
-      <div class="col-xs-12 col-sm-4">
-        <%= render "card", event: e %>
-      </div>
-    <% end %>
+     <% @events.each do |e| %>
+    <div class="col-xs-12 col-md-4">
+      <%= render "card", event: e %>
+    </div>
+  <% end %>
   </div>
 </div>
