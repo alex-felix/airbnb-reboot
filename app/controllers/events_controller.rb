@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update,:destroy]
-
+  # TO BE DELETED -----------------------------------------
+  skip_before_action :authenticate_user!, only: [:new, :create]
   def index
     @events = Event.all
   end
@@ -29,7 +30,7 @@ class EventsController < ApplicationController
   # To filter hacking forms
   def event_params
     params.require(:event).permit(:title, :description, :interests, :starts_at, :ends_at, :location_id, :user_id)
-e end
+  end
   def set_event
     @event = Event.find(params[:id])
   end

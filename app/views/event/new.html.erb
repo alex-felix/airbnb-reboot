@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 div-md-6 div-md-offset-3">
+      <%= simple_form_for(@event) do |e| %>
+        <%= e.error_notification %>
+        <%= e.input :title, label: "Enter a type", placeholder: "Party at home" %>
+        <%= e.input :description, label: "Enter a description", placeholder: "Super party at home, bring your drinks" %>
+      <% end %>
+    </div>
+  </div>
+</div>
