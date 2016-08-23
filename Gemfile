@@ -16,6 +16,8 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 
+gem 'faker'
+
 # Devise gem for log in
 gem 'devise'
 # Facebook authentification
@@ -30,5 +32,4 @@ group :development, :test do
   gem 'spring'
   gem 'listen', '~> 3.0.5'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'faker'
 end
