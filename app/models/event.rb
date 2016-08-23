@@ -5,6 +5,6 @@ class Event < ApplicationRecord
   has_many :users, through: :attendances
   belongs_to :location
   belongs_to :user
-  validates :user, :location, :start_time, :end_time, presence: true
-  validates :interests, inclusion: { in: %w(outdoors citytrip sport nightlife home) }
+  validates :user, :location, :starts_at, :ends_at, presence: true
+  # validates :interests, inclusion: { in: %w(outdoors citytrip sport nightlife home) }
 end
