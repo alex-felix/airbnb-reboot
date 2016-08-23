@@ -13,7 +13,7 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, presence: true, uniqueness: true
   validates :address, :city, presence: true
-  GENDERS = %w(male female unknown)
+  GENDERS = %w(Male Female Unknown)
   validates :gender, presence: true, inclusion: { in: GENDERS }
   validates :email, presence: true, uniqueness: true, format: {
     with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i,
@@ -28,7 +28,7 @@ class User < ApplicationRecord
     message: "invalid poscode"
   }
   validates :date_of_birth, presence: true, format: {
-    with: /\A(0[1-9]|[12][0-9]|3[01])([-.]|[\/.])(0[1-9]|1[012])([-.]|[\/.])(19|20)\d\d\z/
+    with: /\A(0[1-9]|[12][0-9]|3[01])([-.]|[\/.])(0[1-9]|1[012])([-.]|[\/.])(19|20)\d\d\z/,
     message: "invalid date of birth"
   }
 
