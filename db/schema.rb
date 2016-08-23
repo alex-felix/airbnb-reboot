@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160823113609) do
+ActiveRecord::Schema.define(version: 20160823152125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,14 +41,20 @@ ActiveRecord::Schema.define(version: 20160823113609) do
 
   create_table "locations", force: :cascade do |t|
     t.string   "name"
-    t.text     "decription"
     t.string   "address"
     t.string   "postcode"
     t.string   "country"
     t.integer  "capacity"
+<<<<<<< HEAD
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "city"
+    t.text     "description"
+=======
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "city"
+>>>>>>> cd85853cd3066df3c1963e10dda6ea3ce67b9e94
   end
 
   create_table "users", force: :cascade do |t|
@@ -79,6 +85,10 @@ ActiveRecord::Schema.define(version: 20160823113609) do
     t.string   "facebook_picture_url"
     t.string   "token"
     t.datetime "token_expiry"
+<<<<<<< HEAD
+    t.string   "city"
+=======
+>>>>>>> cd85853cd3066df3c1963e10dda6ea3ce67b9e94
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
