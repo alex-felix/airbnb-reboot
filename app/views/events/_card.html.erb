@@ -1,0 +1,11 @@
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://unsplash.it/300/200?random');">
+  <div class="card-category">Some stuff</div>
+
+  <div class="card-description">
+    <h2><%= event.title %></h2>
+    <p>Very cool stuff, useful and smart</p>
+    <%= link_to "Delete", event_path(id: event.id), method: :delete, class:"btn btn-primary"%>
+  </div>
+  <%= link_to "", event_path(id: event.id), class:"card-link"%>
+
+</div>
