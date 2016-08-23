@@ -12,14 +12,19 @@ class EventsController < ApplicationController
   end
 
   def create
-    Event.create(event_params)
-    redirect_to event_path(@event)
+    @current_user = current_user.id
+    @event = Event.new(event_params)
+    if @event.save
+      redirect_to events_path
+    else
+      render :new
+    end
   end
   def edit
   end
   def update
     Event.update(event_params)
-    redirect_to event_path(@event)
+    redirect_to root_path
   end
   def destroy
     @event.destroy
