@@ -18,6 +18,8 @@ gem 'autoprefixer-rails'
 
 # Devise gem for log in
 gem 'devise'
+# Facebook authentification
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'binding_of_caller'
