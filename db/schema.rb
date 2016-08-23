@@ -45,16 +45,10 @@ ActiveRecord::Schema.define(version: 20160823152125) do
     t.string   "postcode"
     t.string   "country"
     t.integer  "capacity"
-<<<<<<< HEAD
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "city"
     t.text     "description"
-=======
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "city"
->>>>>>> cd85853cd3066df3c1963e10dda6ea3ce67b9e94
   end
 
   create_table "users", force: :cascade do |t|
@@ -85,10 +79,7 @@ ActiveRecord::Schema.define(version: 20160823152125) do
     t.string   "facebook_picture_url"
     t.string   "token"
     t.datetime "token_expiry"
-<<<<<<< HEAD
     t.string   "city"
-=======
->>>>>>> cd85853cd3066df3c1963e10dda6ea3ce67b9e94
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
