@@ -16,7 +16,7 @@
       </form>
 
       <!-- Explore button -->
-      <%= link_to t(".top_call_to_action", default: "Explore Events"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+      <%= link_to t(".top_call_to_action", default: "Explore Events"), events_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
     </div>
   </div>
 
@@ -67,11 +67,7 @@
     <% end %>
 
     <!-- Button (call-to-action) -->
-<<<<<<< HEAD
-    <%= link_to t(".top_call_to_action", default: "Create a new event now"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
-=======
-    <%= link_to t(".top_call_to_action", default: "Create Event"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
->>>>>>> master
+    <%= link_to t(".top_call_to_action", default: "Create a new event now"), new_event_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
