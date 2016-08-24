@@ -16,8 +16,8 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    @event_user = current_user
-    if @event.save
+    @event.user = current_user
+    if @event.save!
       redirect_to events_path
     else
       render :new
@@ -42,7 +42,8 @@ class EventsController < ApplicationController
   # To filter hacking forms
   def event_params
     params.require(:event).permit(:title, :description, :interests, :starts_at_day,
-      :ends_at_day, :user_id, :address, :postcode, :city, :photo, :photo_cache)
+      :ends_at_day, :user_id, :address, :postcode, :city, :photo, :photo_cache,
+      :starts_at_time, :ends_at_time)
   end
 
   def set_event
