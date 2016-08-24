@@ -22,6 +22,12 @@ gem 'devise'
 gem 'omniauth-facebook'
 # cloudinary to upload photos
 gem 'cloudinary', '1.1.0'
+# photo uploader
+gem 'carrierwave'
+# date picker
+source "https://rails-assets.org" do
+  gem 'rails-assets-bootstrap-datepicker'
+end
 
 group :development, :test do
   gem 'binding_of_caller'

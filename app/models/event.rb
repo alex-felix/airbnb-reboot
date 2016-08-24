@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
   has_many :attendances
   has_many :users, through: :attendances
   belongs_to :location
