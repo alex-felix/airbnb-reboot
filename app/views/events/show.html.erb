@@ -3,6 +3,8 @@
   <div class="banner-content">
     <h1><%=@event.title%></h1>
     <h2><%=@event.interests.join(', ')%></h1>
+    <h3>Created by <%=@event.user.first_name%></h3>
+ <!--    <div><%= image_tag @event.user.facebook_picture_url, class: "card-user avatar-large" %></div> TODO -->
     <p><%=@event.postcode%></p>
     <p><%=@event.description%></p>
 

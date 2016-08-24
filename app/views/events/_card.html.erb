@@ -5,5 +5,5 @@
     <p><%= event.postcode %></p>
   </div>
   <%= link_to "", event_path(id: event.id), class:"card-link" %>
-  <img class="card-user avatar-large" src="http://unsplash.it/500/500?random">
+  <%= image_tag event.user.facebook_picture_url, class: "card-user avatar-large" %>
 </div>
