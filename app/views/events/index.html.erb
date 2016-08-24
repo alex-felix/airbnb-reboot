@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="light-grey-background wrapper">
   <h2 class="text-center">Keep it real!</h2>
   <p class="text-center">Find a cool event near you or post yours!</p>
   <p class="text-center">Meet new people</p>
@@ -7,11 +7,11 @@
   </div>
 </div>
 
-<div class="wrapper">
+<div class="light-grey-background wrapper">
   <div class="container">
     <div class="row">
        <% @events.each do |e| %>
-      <div class="col-xs-12 col-md-4">
+      <div class="col-xs-12 col-sm-6 col-lg-4">
         <%= render "card", event: e %>
       </div>
     <% end %>
