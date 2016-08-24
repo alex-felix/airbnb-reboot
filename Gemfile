@@ -33,6 +33,12 @@ source 'https://rails-assets.org' do
 end
 # adding geocoder gem
 gem 'geocoder'
+# google map integration
+gem "coffee-rails"
+gem "gmaps4rails"
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
 
 group :development, :test do
   gem 'binding_of_caller'
