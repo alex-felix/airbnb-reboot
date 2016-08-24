@@ -20,6 +20,8 @@ gem 'autoprefixer-rails'
 gem 'devise'
 # Facebook authentification
 gem 'omniauth-facebook'
+# cloudinary to upload photos
+gem 'cloudinary', '1.1.0'
 
 group :development, :test do
   gem 'binding_of_caller'

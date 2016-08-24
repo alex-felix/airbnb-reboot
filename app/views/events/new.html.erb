@@ -10,6 +10,8 @@
         <%= e.input :starts_at %>
         <%= e.input :ends_at %>
         <%= e.input :location_id, collection: ["1", "2", "3"], prompt: "Select a place"  %>
+        <%= e.input :photo %>
+        <%= e.input :photo_cache, as: :hidden %>
         <%= e.button :submit, input_html: { class: 'btn btn-primary'} %>
       <% end %>
     </div>
