@@ -31,6 +31,8 @@ gem 'carrierwave'
 source "https://rails-assets.org" do
   gem 'rails-assets-bootstrap-datepicker'
 end
+# adding geocoder gem
+gem "geocoder"
 
 group :development, :test do
   gem 'binding_of_caller'
