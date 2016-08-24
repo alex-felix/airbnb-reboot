@@ -39,11 +39,8 @@ class EventsController < ApplicationController
 
   private
 
-  # To filter hacking forms
   def event_params
-    params.require(:event).permit(:title, :description, :interests, :starts_at_day,
-      :ends_at_day, :user_id, :address, :postcode, :city, :photo, :photo_cache,
-      :starts_at_time, :ends_at_time)
+    params.require(:event).permit(:title, :description, :interests, :starts_at_day, :ends_at_day, :user_id, :address, :postcode, :city, :photo, :photo_cache, :starts_at_time, :ends_at_time)
   end
 
   def set_event

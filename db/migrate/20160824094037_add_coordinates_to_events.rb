@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class AddCoordinatesToEvents < ActiveRecord::Migration[5.0]
   def change
     add_column :events, :latitude, :float
