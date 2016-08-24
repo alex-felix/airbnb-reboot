@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 class EventsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   def index
     @events = Event.all
@@ -41,7 +42,7 @@ class EventsController < ApplicationController
   # To filter hacking forms
   def event_params
     params.require(:event).permit(:title, :description, :interests, :starts_at,
-      :ends_at, :location_id, :user_id, :photo, :photo_cache)
+      :ends_at, :user_id, :address, :postcode, :city, :photo, :photo_cache)
   end
 
   def set_event

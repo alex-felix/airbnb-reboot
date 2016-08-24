@@ -1,10 +1,12 @@
 <%= simple_form_for(@event) do |e| %>
     <%= e.input :title, label: "Enter a type", placeholder: "Party at home" %>
     <%= e.input :description, label: "Enter a description", placeholder: "Super party at home, bring your drinks" %>
+    <%= e.input :address, label: "Enter an address", placeholder: "Elder street 14" %>
+    <%= e.input :postcode, label: "Enter a postcode", placeholder: "E1 6BT" %>
+    <%= e.input :city, label: "Enter a city", placeholder: "London" %>
     <%= e.input :interests, collection: ["party at home", "Dance at home", "Pizza at home"], prompt: "Choose an interest" %>
-    <%= e.input :starts_at, input_html: { class: "datepicker" } %>
-    <%= e.input :ends_at, input_html: { class: "datepicker" } %>
-    <%= e.input :location_id, collection: ["1", "2", "3"], prompt: "Select a place"  %>
+    <%= e.input :starts_at, as: :string, input_html: { data: { provide: :datepicker } } %>
+    <%= e.input :ends_at, as: :string, input_html: { data: { provide: :datepicker } } %>
     <%= e.input :photo %>
     <%= e.input :photo_cache, as: :hidden %>
     <%= e.button :submit, class: "btn btn-primary"  %>

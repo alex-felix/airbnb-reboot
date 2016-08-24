@@ -1,18 +1,20 @@
-<div class="wrapper">
+<div class="light-grey-background wrapper">
   <h2 class="text-center">Keep it real!</h2>
-  <p class="text-center">Find a cool event or post yours!</p>
+  <p class="text-center">Find a cool event near you or post yours!</p>
   <p class="text-center">Meet new people</p>
   <div class="text-center">
-    <%= link_to "Quickly add your event", new_event_path, class: "btn btn-success"%>
+    <%= link_to "Quickly add your event", new_event_path, class: "btn navbar-wagon-button"%>
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-     <% @events.each do |e| %>
-    <div class="col-xs-12 col-md-4">
-      <%= render "card", event: e %>
+<div class="light-grey-background wrapper">
+  <div class="container">
+    <div class="row">
+       <% @events.each do |e| %>
+      <div class="col-xs-12 col-sm-6 col-lg-4">
+        <%= render "card", event: e %>
+      </div>
+    <% end %>
     </div>
-  <% end %>
   </div>
 </div>
