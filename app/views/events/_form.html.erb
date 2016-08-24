@@ -5,8 +5,8 @@
     <%= e.input :postcode, label: "Enter a postcode", placeholder: "E1 6BT" %>
     <%= e.input :city, label: "Enter a city", placeholder: "London" %>
     <%= e.input :interests, collection: ["party at home", "Dance at home", "Pizza at home"], prompt: "Choose an interest" %>
-    <%= e.input :starts_at, as: :string, input_html: { data: { provide: :datepicker } } %>
-    <%= e.input :ends_at, as: :string, input_html: { data: { provide: :datepicker } } %>
+    <%= e.input :starts_at_day, as: :string, input_html: { data: { provide: :datepicker } } %>
+    <%= e.input :ends_at_day, as: :string, input_html: { data: { provide: :datepicker } } %>
     <%= e.input :photo %>
     <%= e.input :photo_cache, as: :hidden %>
     <%= e.button :submit, class: "btn btn-primary"  %>
