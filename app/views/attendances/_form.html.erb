@@ -2,7 +2,6 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <%= simple_form_for [@event, @attendance] do |e| %>
-        <%= e.input :user_id, placeholder: "2 teaspoons"%>
         <%= e.input :event_id, collection: Event.all, prompt: "Choose event"%>
         <%= e.submit "Submit", class: "btn btn-primary" %>
       <% end %>
