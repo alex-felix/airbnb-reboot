@@ -1,0 +1,10 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://unsplash.it/300/200?random');">
+  <div class="banner-content">
+    <h1><%=@event.title%></h1>
+    <h2><%=@event.interests.join(', ')%></h1>
+    <p><%=@event.location.postcode%></p>
+    <p><%=@event.description%></p>
+      <ul><%= link_to "Back to list", events_path, class:"btn btn-success"%></ul>
+      <ul><%= link_to "I'm up for it!", new_event_attendance_path(@event), class:"btn btn-success"%></ul>
+  </div>
+</div>

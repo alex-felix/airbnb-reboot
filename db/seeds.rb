@@ -12,7 +12,7 @@ mike = User.create!(first_name: 'Mike', last_name: 'Julien', address: 'Pimlico',
 Event.create!(title: 'Movie Night: Finding Dory', description: 'I am organising a viewing of Finding Dory on my brand new home cinema. Join me if you am up to watching it!', interests: ['movies', 'movie night', 'chill'], starts_at: DateTime.new(2016, 8, 26), ends_at: DateTime.new(2016, 8, 26), user: sam, location: location1)
 Event.create!(title: "Let's go play tennis together!", description: 'I am looking for a second tennis player to come play with me on Saturday afternoon. I have already booked the cours in holland park.', interests: %w(sports tennis social), starts_at: DateTime.new(2016, 8, 30, 16, 0, 0), ends_at: DateTime.new(2016, 8, 30, 20, 0, 0), user: mike, location: location2)
 Event.create!(title: 'Going for a drink in Shoreditch', description: 'Up for some drinks in shoeditch anyone? I was thinking about going to the water poet maybe?', interests: ['drinks', 'after-work', 'social'], starts_at: DateTime.new(2016, 8, 26), ends_at: DateTime.new(2016, 8, 26), user: sam, location: location1)
-Event.create!(title: 'Club at Mayfair', description: 'I have money, I got a table, come join!', interests: %w(clubs mayfaire drinking), starts_at: DateTime.new(2016, 8, 26), ends_at: DateTime.new(2016, 8, 26), user: sam, location: location1)
+Event.create!(title: 'Club at Mayfair', description: 'I have money, I got a table, come join!', interests: %w(clubs mayfair drinking), starts_at: DateTime.new(2016, 8, 26), ends_at: DateTime.new(2016, 8, 26), user: sam, location: location1)
 
 7.times do
   user = User.new(
