@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+# ActiveRecord::Schema.define(version: 20160824045934) do
 ActiveRecord::Schema.define(version: 20_160_823_170_612) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
@@ -25,6 +26,21 @@ ActiveRecord::Schema.define(version: 20_160_823_170_612) do
     t.index ['user_id'], name: 'index_attendances_on_user_id', using: :btree
   end
 
+<<<<<<< HEAD
+  create_table "events", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "interests",   default: [],              array: true
+    t.integer  "location_id"
+    t.integer  "user_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.datetime "ends_at"
+    t.datetime "starts_at"
+    t.string   "photo"
+    t.index ["location_id"], name: "index_events_on_location_id", using: :btree
+    t.index ["user_id"], name: "index_events_on_user_id", using: :btree
+=======
   create_table 'events', force: :cascade do |t|
     t.string   'title'
     t.text     'description'
@@ -37,6 +53,7 @@ ActiveRecord::Schema.define(version: 20_160_823_170_612) do
     t.datetime 'starts_at'
     t.index ['location_id'], name: 'index_events_on_location_id', using: :btree
     t.index ['user_id'], name: 'index_events_on_user_id', using: :btree
+>>>>>>> master
   end
 
   create_table 'locations', force: :cascade do |t|
