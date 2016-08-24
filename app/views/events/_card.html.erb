@@ -1,10 +1,9 @@
 <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://unsplash.it/300/200?random');">
-  <div class="card-category"><%= event.interests.join %></div>
+  <div class="card-category"><%= event.interests.join(", ") %></div>
   <div class="card-description">
     <h2><%= event.title.capitalize %></h2>
-    <p><%= event.location.postcode.upcase %></p>
-    <%= link_to "View Event", event_path(id: event.id), class:"btn btn-primary"%>
+    <p><%= event.postcode %></p>
   </div>
-  <%= link_to "???", event_path(id: event.id), class:"card-link"%>
+  <%= link_to "", event_path(id: event.id), class:"card-link"%>
   <img class="card-user avatar-large" src="http://unsplash.it/500/500?random">
 </div>
