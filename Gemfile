@@ -28,11 +28,11 @@ gem 'cloudinary', '1.1.0'
 # photo uploader
 gem 'carrierwave'
 # date picker
-source "https://rails-assets.org" do
+source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-datepicker'
 end
 # adding geocoder gem
-gem "geocoder"
+gem 'geocoder'
 
 group :development, :test do
   gem 'binding_of_caller'

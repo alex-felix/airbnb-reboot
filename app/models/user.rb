@@ -1,14 +1,12 @@
 # frozen_string_literal: true
 class User < ApplicationRecord
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:facebook]
+
   has_many :attendances
   has_many :events
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, omniauth_providers: [:facebook]
 
   # before_validation :lower_first_name_capitalize
   # before_validation :lower_last_name_capitalize
-
   # validates :first_name, :last_name, presence: true, uniqueness: true
   # validates :address, :city, presence: true
   # GENDERS = %w(Male Female Unknown)
@@ -40,7 +38,6 @@ class User < ApplicationRecord
   #   self.last_name = last_name.downcase.capitalize
   # end
 
-  # method for FB login
   def self.find_for_facebook_oauth(auth)
     user_params = auth.to_h.slice(:provider, :uid)
     user_params.merge! auth.info.slice(:email, :first_name, :last_name)
