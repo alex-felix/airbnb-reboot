@@ -1,5 +1,5 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://unsplash.it/300/200?random');">
-<%= cl_image_tag @event.photo, width: 400, height: 300, crop: :fill %>
+
 
   <div class="banner-content">
     <h1><%=@event.title%></h1>
@@ -10,3 +10,6 @@
       <ul><%= link_to "I'm up for it!", new_event_attendance_path(@event), class:"btn btn-success"%></ul>
   </div>
 </div>
+
+
+<%= cl_image_tag @event.photo, width: 400, height: 300, crop: :fill %>
