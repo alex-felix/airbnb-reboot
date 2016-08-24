@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class AddStuffToUsers < ActiveRecord::Migration[5.0]
   def change
     add_column :users, :full_name, :string

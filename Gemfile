@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 source 'https://rubygems.org'
 ruby '2.3.1'
 
@@ -15,6 +16,8 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
+
+gem 'faker'
 
 # Devise gem for log in
 gem 'devise'
@@ -38,5 +41,4 @@ group :development, :test do
   gem 'spring'
   gem 'listen', '~> 3.0.5'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'faker'
 end
