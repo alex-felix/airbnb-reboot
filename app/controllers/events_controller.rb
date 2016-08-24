@@ -8,7 +8,7 @@ class EventsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@events) do |event, marker|
       marker.lat event.latitude
       marker.lng event.longitude
-      # marker.infowindow render_to_string(partial: "/events/map_box", locals: { flat: flat })
+      # marker.infowindow render_to_string(partial: "/events/map_box", locals: { event: event })
     end
   end
 
@@ -18,7 +18,7 @@ class EventsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@events) do |event, marker|
       marker.lat event.latitude
       marker.lng event.longitude
-      # marker.infowindow render_to_string(partial: "/events/map_box", locals: { flat: flat })
+      # marker.infowindow render_to_string(partial: "/events/map_box", locals: { event: event })
     end
   end
 
