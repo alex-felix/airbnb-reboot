@@ -2,7 +2,7 @@
   <div class="banner-content">
     <h1><%=@event.title%></h1>
     <h2><%=@event.interests.join(', ')%></h1>
-    <p><%=@event.location.postcode%></p>
+    <p><%=@event.postcode%></p>
     <p><%=@event.description%></p>
       <ul><%= link_to "Back to list", events_path, class:"btn btn-success"%></ul>
       <ul><%= link_to "I'm up for it!", new_event_attendance_path(@event), class:"btn btn-success"%></ul>
