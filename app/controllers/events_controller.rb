@@ -41,7 +41,7 @@ class EventsController < ApplicationController
 
   def update
     Event.update(event_params)
-    redirect_to root_path
+    redirect_to events_path
   end
 
   def destroy

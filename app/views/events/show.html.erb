@@ -2,7 +2,7 @@
 
   <div class="banner-content">
     <h1><%=@event.title%></h1>
-    <h2><%=@event.interests.join(', ')%></h1>
+    <h2><%=@event.interests%></h1>
     <% avatar_url = @event.user.facebook_picture_url || 'unknown-user.png' %>
     <h3>Created by <%=@event.user.first_name || '-no first name supplied-' %> <%= image_tag avatar_url, class: "avatar-large" %></h3>
 
