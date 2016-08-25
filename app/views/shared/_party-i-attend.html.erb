@@ -1,0 +1,36 @@
+<!-- PARTY TO WHICH YOU ATTEND  -->
+<div class="container">
+  <h2>My bookings</h2>
+</div>
+<% @attend_events.each do |attend_events|%>
+  <div class="container">
+    <div class="row cell-bg">
+      <div class="col-xs-12 col-md-4">
+        <h2><%= attend_events.event.title%></h2>
+        <ul>
+          <li>
+            <p><%= attend_events.event.description%></p>
+          </li>
+          <li>
+            <p><%= attend_events.event.interests%></p>
+          </li>
+          <li>
+            <p>Starts at<%= attend_events.event.starts_at_day%> at <%= attend_events.event.starts_at_time%></p>
+          </li>
+          <li>
+            <p>Ends at<%= attend_events.event.ends_at_day%> at <%= attend_events.event.ends_at_time%></p>
+          </li>
+          <li>
+            <p>Location : <%= attend_events.event.address%>, <%= attend_events.event.postcode%> <%= attend_events.event.city%></p>
+          </li>
+
+          <a href="" class="btn btn-primary btn-block">See this event</a>
+          <a href="" class="btn btn-info btn-block">Promote this event</a>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-md-8 image-center-col">
+        <img src="<%= cl_image_path attend_events.event.photo, height: 300, width: 400, crop: :fill %>" alt="Your attend_events : <%= attend_events.event.title%>">
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -6,4 +6,10 @@ Rails.application.routes.draw do
   end
   root to: 'events#index'
   get 'contact', to: 'pages#contact'
+
+  get '/dashboards', to: 'dashboards#index'
+
+  get '/profiles/edit', to: 'profiles#edit', as: :edit_profile
+  patch '/profile', to: 'profiles#update', as: :update_profile
+  resources :profiles, only: :show
 end

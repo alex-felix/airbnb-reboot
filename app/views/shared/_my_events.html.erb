@@ -1,0 +1,32 @@
+<!-- YOUR EVENT  -->
+<% @events.each do |event|%>
+  <div class="container">
+    <div class="row cell-bg">
+      <div class="col-xs-12 col-md-4">
+        <h2><%= event.title%></h2>
+        <ul>
+          <li>
+            <p><%= event.description%></p>
+          </li>
+          <li>
+            <p><%= event.interests%></p>
+          </li>
+          <li>
+            <p>Starts at<%= event.starts_at_day%> at <%= event.starts_at_time%></p>
+          </li>
+          <li>
+            <p>Ends at<%= event.ends_at_day%> at <%= event.ends_at_time%></p>
+          </li>
+          <li>
+            <p>Location : <%= event.address%>, <%= event.postcode%> <%= event.city%></p>
+          </li>
+          <a href="<% event_path(event) %>" class="btn btn-primary btn-block">Update my event</a>
+          <a href="" class="btn btn-info btn-block">Promote my event</a>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-md-8 image-center-col">
+        <img src="<%= cl_image_path event.photo, height: 300, width: 400, crop: :fill %>" alt="Your event : <%= event.title%>">
+      </div>
+    </div>
+  </div>
+<% end %>
