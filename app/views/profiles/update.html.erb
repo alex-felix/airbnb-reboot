@@ -1,0 +1,23 @@
+<%= simple_form_for(@user) do |u| %>
+  <%= u.error_notification %>
+
+  <%= u.input :email %>
+
+  <%= u.button :submit %>
+<% end %>
+
+<!-- Deactivate label -->
+<%= u.input :name, label: false %>
+<!-- Change default label -->
+<%= u.input :name, label: "Entrez votre nom" %>
+<!-- Add placeholder -->
+<%= u.input :name, placeholder: "Bob" %>
+<!-- Add HTML attributes on input -->
+<%= u.input :name, input_html: {class: "input-lg"} %>
+<!-- Add HTML attributes on label -->
+<%= u.input :name, label_html: {class: "label-lg"} %>
+<!-- Use collection for select -->
+<%= u.input :stars, collection: 1..5, prompt: "Nb of stars", selected: 3 %>
+# To have a selector
+
+<%= u.input :age, collection: 18..60 %>

@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   end
   root to: 'events#index'
   get 'contact', to: 'pages#contact'
+  resources :profiles, only: [:show , :update]
 end

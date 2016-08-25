@@ -1,0 +1,21 @@
+<h1>Welcome <%= @user.first_name%> <%= @user.last_name%></h1>
+<% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+<%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu" %>
+
+<p>Your email : <%= @user.email%></p>
+<p>Your address : <%= @user.address%></p>
+<p>Your city : <%= @user.postcode%> <%= @user.city%></p>
+<p>Your country : <%= @user.country%></p>
+<p>Your Phone number : <%= @user.phone_number%></p>
+<p>Your Birthday : <%= @user.date_of_birth%></p>
+<p>Your interests  : <%= @user.interests%></p>
+
+<h2>Your organised events</h2>
+<% @events.each do |event|%>
+  <ul>
+    <li>
+      <p><%= event.title%></p>
+    </li>
+  </ul>
+<% end %>
+
