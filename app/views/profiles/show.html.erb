@@ -9,7 +9,9 @@
     </div>
   </div>
 </div>
-
-<%= render 'profile_details' %>
-<%= render 'party-i-attend' %>
-<%= render 'my_events' %>
+<div class="container">
+  <h2>
+    <%= @user.first_name%>' organises these parties'
+  </h2>
+</div>
+<%= render 'shared/my_events' %>

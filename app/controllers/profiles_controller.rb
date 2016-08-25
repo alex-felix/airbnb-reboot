@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 class ProfilesController < ApplicationController
   # def show
-  #   @events = Event.where(user_id: current_user.id)
   #   @attend_events = Attendance.where(user_id: current_user.id)
   # end
 
   # Liens avec ID ouvert à tous
   def show
     @user = User.find(params[:id])
+    @events = Event.where(user_id: current_user.id)
   end
 
   def edit
