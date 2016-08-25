@@ -31,8 +31,6 @@ gem 'carrierwave'
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-datepicker'
 end
-# simpleform datepicker
-gem 'simple-form-datepicker'
 # adding geocoder gem
 gem 'geocoder'
 # google map integration
