@@ -3,8 +3,10 @@
   <div class="banner-content">
     <h1><%=@event.title%></h1>
     <h2><%=@event.interests.join(', ')%></h1>
-    <h3>Created by <%=@event.user.first_name%></h3>
- <!--    <div><%= image_tag @event.user.facebook_picture_url, class: "card-user avatar-large" %></div> TODO -->
+    <% avatar_url = @event.user.facebook_picture_url || 'unknown-user.png' %>
+    <h3>Created by <%=@event.user.first_name || '-no first name supplied-' %> <%= image_tag avatar_url, class: "avatar-large" %></h3>
+
+
     <p><%=@event.postcode%></p>
     <p><%=@event.description%></p>
 
@@ -22,8 +24,9 @@
       <div class="row">
       <% @event.users.each do |user| %>
         <div class="attending-row">
-        <%= image_tag user.facebook_picture_url, :class => "img-circle"%>
-        <%= user.first_name %>
+        <% avatar_url = user.facebook_picture_url || 'unknown-user.png' %>
+        <%= image_tag avatar_url, :class => "avatar-large"%>
+        <%= user.first_name || '-no first name supplied-' %>
         </div>
       <% end %>
       </div>

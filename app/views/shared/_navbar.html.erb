@@ -37,10 +37,10 @@
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <a href="#" class="btn dropdown-toggle" id: "navbar-wagon-menu" data-toggle="dropdown">
+          <a href="#" class="dropdown-toggle" id: "navbar-wagon-menu" data-toggle="dropdown" style="text-decoration: none;">
           <% avatar_url = current_user.facebook_picture_url || 'unknown-user.png' %>
             <%= image_tag avatar_url, class: "avatar-bordered" %>
-            <span class="caret"></span>
+            <i class="fa fa-caret-down" aria-hidden="true"></i>
           </a>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
