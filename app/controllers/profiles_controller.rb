@@ -15,7 +15,7 @@ class ProfilesController < ApplicationController
 
   def update
     if current_user.update(user_params)
-      current_user.save
+      User.update(user_params)
       redirect_to dashboards_path
     else
       render :edit
@@ -26,6 +26,7 @@ class ProfilesController < ApplicationController
   private
   # To filter hacking forms
   def user_params
-    params.require(:user).permit(:name, :address)
+    params.require(:user).permit(:first_name, :last_name, :address, :gender,
+     :postcode, :city, :phone_number, :date_of_birth, :email )
   end
 end
