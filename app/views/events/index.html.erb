@@ -14,13 +14,15 @@
       <div class="col-xs-12 col-sm-6 col-lg-4">
         <%= render "card", event: e %>
       </div>
-    <% end %>
+       <% end %>
     </div>
   </div>
 </div>
+
 <div id="map" style="width: 100%; height: 600px;"></div>
+
 <% content_for(:after_js) do %>
-  <script>
+  <%= javascript_tag do %>
     $(document).on('ready', function() {
       var handler = Gmaps.build('Google');
       handler.buildMap({ internal: { id: 'map' } }, function() {
@@ -34,5 +36,7 @@
         }
       });
     });
-  </script>
+  <% end %>
 <% end %>
+
+
