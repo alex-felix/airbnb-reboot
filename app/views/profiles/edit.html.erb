@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <%= simple_form_for(current_user, url: update_profile_path) do |u| %>
+        <%= u.error_notification %>
+        <%= u.input :gender %>
+        <%= u.input :email %>
+        <%= u.input :first_name, label: "First name", placeholder: "Bob" %>
+        <%= u.input :last_name %>
+        <%= u.input :address %>
+        <%= u.input :postcode %>
+        <%= u.input :city %>
+        <%= u.input :phone_number %>
+        <%= u.input :date_of_birth, as: :string, input_html: { data: { provide: :datepicker } } %>
+        <%= u.input :interests, collection: ["party at home", "Dance at home", "Pizza at home"], prompt: "Choose an interest" %>
+        <%= u.button :submit, class: "btn btn-primary"  %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<!-- YOUR DETAILS  -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-4">
+      <h2>Your details</h2>
+      <p>Your email : <%= @user.email%></p>
+      <!-- Address -->
+      <%if @user.address == nil %>
+        <p>Your address : <%= link_to "Update your profile", edit_profile_path %></p>
+      <% else %>
+        <p>Your address : <%= @user.address%></p>
+      <% end %>
+      <!-- City -->
+      <%if @user.city == nil %>
+        <p>Your city : <%= link_to "Update your profile", edit_profile_path %></p>
+      <% else %>
+        <p>Your city : <%= @user.postcode%> <%= @user.city%></p>
+      <% end %>
+      <!-- Country -->
+      <%if @user.country == nil %>
+        <p>Your country : <%= link_to "Update your profile", edit_profile_path %></p>
+      <% else %>
+        <p>Your country : <%= @user.country%> <%= @user.country%></p>
+      <% end %>
+      <!-- Phone number -->
+      <%if @user.phone_number == nil %>
+        <p>Your phone number : <%= link_to "Update your profile", edit_profile_path %></p>
+      <% else %>
+        <p>Your phone number : <%= @user.phone_number%></p>
+      <% end %>
+      <!-- birthday -->
+      <%if @user.date_of_birth == nil %>
+        <p>Your birthday is : <%= link_to "Update your profile", edit_profile_path %></p>
+      <% else %>
+        <p>Your birthday is : <%= @user.date_of_birth%></p>
+      <% end %>
+      <!-- interests -->
+      <%if @user.interests == nil %>
+
+        <p>Your interests : <%= link_to "Update your profile", edit_profile_path %></p>
+      <% else %>
+        <p>Your interests : <%= @user.interests%></p>
+      <% end %>
+    </div>
+  </div>
+</div>
