@@ -1,31 +1,47 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path @event.photo, height: 300, width: 400, crop: :fill %>">
 
-  <div class="banner-content">
-    <h1><%=@event.title%></h1>
-    <h2><%=@event.interests.join(', ')%></h1>
-    <p><%=@event.postcode%></p>
-    <p><%=@event.description%></p>
-
-    <ul class="list-inline">
-      <li> <%= link_to "Back to list", events_path, class:"btn navbar-wagon-button"%> </li>
-      <li><%= link_to "I'm up for it!", event_attendances_path(@event.id), method: :post, class:"btn navbar-wagon-button btn-blue-green"%></li>
-      <li> <%= link_to "Share", "http://facebook.com", class:"btn navbar-wagon-button"%> </li>
-    </ul>
-
-    <h3>Attendees</h3>
-    <% if @event.users.first.nil? %>
+<div class="banner-content">
+  <h1><%=@event.title%></h1>
+  <h2><%=@event.interests.join(', ')%></h1>
+  <p><%=@event.postcode%></p>
+  <p><%=@event.description%></p>
+  <ul class="list-inline">
+    <li> <%= link_to "Back to list", events_path, class:"btn navbar-wagon-button"%> </li>
+    <li><%= link_to "I'm up for it!", event_attendances_path(@event.id), method: :post, class:"btn navbar-wagon-button btn-blue-green"%></li>
+    <li> <%= link_to "Share", "http://facebook.com", class:"btn navbar-wagon-button"%> </li>
+  </ul>
+  <h3>Attendees</h3>
+  <% if @event.users.first.nil? %>
     <p>No one is attending the event yet</p>
-    <% else %>
+  <% else %>
     <div class="containter">
       <div class="row">
-      <% @event.users.each do |user| %>
+        <% @event.users.each do |user| %>
         <div class="attending-row">
-        <%= image_tag user.facebook_picture_url, :class => "img-circle"%>
-        <%= user.first_name %>
+          <%= image_tag user.facebook_picture_url, :class => "img-circle"%>
+          <%= user.first_name %>
         </div>
-      <% end %>
+        <% end %>
       </div>
     </div>
     <% end %>
   </div>
 </div>
+<div id="map" style="width: 100%; height: 600px;"></div>
+<% content_for(:after_js) do %>
+  <script type="text/javascript">
+    $(document).on('ready', function() {
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function() {
+        markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+        } else if (markers.length == 1) {
+          handler.getMap().setZoom(14);
+        }
+      });
+    });
+  </script>
+<% end %>

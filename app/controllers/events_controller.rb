@@ -4,10 +4,22 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   def index
     @events = Event.all
+    @events = Event.where.not(latitude: nil, longitude: nil)
+    @hash = Gmaps4rails.build_markers(@events) do |event, marker|
+      marker.lat event.latitude
+      marker.lng event.longitude
+      # marker.infowindow render_to_string(partial: "/events/map_box", locals: { event: event })
+    end
   end
 
   def show
     @event = Event.find(params[:id])
+    @events = Event.where.not(latitude: nil, longitude: nil)
+    @hash = Gmaps4rails.build_markers(@events) do |event, marker|
+      marker.lat event.latitude
+      marker.lng event.longitude
+      # marker.infowindow render_to_string(partial: "/events/map_box", locals: { event: event })
+    end
   end
 
   def new
