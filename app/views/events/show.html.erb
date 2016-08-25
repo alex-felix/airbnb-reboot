@@ -1,5 +1,6 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path @event.photo, height: 300, width: 400, crop: :fill %>">
 
+<<<<<<< HEAD
   <div class="banner-content">
     <h1><%=@event.title%></h1>
     <h2><%=@event.interests.join(', ')%></h1>
@@ -19,18 +20,36 @@
     <h3>Attendees</h3>
     <% if @event.users.first.nil? %>
     <p>No one is attending the event yet</p>
-    <% else %>
+  <% else %>
     <div class="containter">
       <div class="row">
-      <% @event.users.each do |user| %>
+        <% @event.users.each do |user| %>
         <div class="attending-row">
         <% avatar_url = user.facebook_picture_url || 'unknown-user.png' %>
         <%= image_tag avatar_url, :class => "avatar-large"%>
         <%= user.first_name || '-no first name supplied-' %>
         </div>
-      <% end %>
+        <% end %>
       </div>
     </div>
     <% end %>
   </div>
 </div>
+<div id="map" style="width: 100%; height: 600px;"></div>
+<% content_for(:after_js) do %>
+  <script type="text/javascript">
+    $(document).on('ready', function() {
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function() {
+        markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+        } else if (markers.length == 1) {
+          handler.getMap().setZoom(14);
+        }
+      });
+    });
+  </script>
+<% end %>
