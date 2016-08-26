@@ -3,13 +3,15 @@
   <div class="card-description">
     <h2><%= event.title.capitalize %></h2>
     <p><%= event.postcode %></p>
+    <%= link_to "", event_path(id: event.id), class:"card-link" %>
   </div>
-  <%= link_to "", event_path(id: event.id), class:"card-link" %>
-  <% if event.user.facebook_picture_url %>
-  <%= image_tag event.user.facebook_picture_url, class: "card-user avatar-large" %>
-  <% else %>
-  <%= image_tag 'unknown-user.png', class: "card-user avatar-large" %>
-  <% end %>
+    <% if event.user.photo? %>
+      <%= cl_image_tag(event.user.photo.path, class: "card-user avatar-large", width: 45, height: 45, crop: :thumb, gravity: :face) %>
+    <% else %>
+      <% avatar_url = event.user.facebook_picture_url || 'unknown-user.png' %>
+      <%= image_tag avatar_url, class: "card-user avatar-large" %>
+    <% end %>
 </div>
+
 
 

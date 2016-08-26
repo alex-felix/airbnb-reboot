@@ -5,7 +5,7 @@
     <div class="col-xs-12 col-md-8 col-md-offset-2">
       <h1>
         <%= @user.first_name%> <%= @user.last_name%>'s page
-        <% avatar_url = @user.facebook_picture_url || "http://placehold.it/30x30" %>
+        <% avatar_url = @user.facebook_picture_url || "unknown-user.png" %>
         <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu" %>
       </h1>
     </div>
