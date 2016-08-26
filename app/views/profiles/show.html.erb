@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
       <h1>
-        Welcome <%= @user.first_name%> <%= @user.last_name%>
+        <%= @user.first_name%> <%= @user.last_name%>'s page
         <% avatar_url = @user.facebook_picture_url || "http://placehold.it/30x30" %>
         <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu" %>
       </h1>
