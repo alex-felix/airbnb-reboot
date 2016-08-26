@@ -8,7 +8,6 @@
 
 
     <p><%=@event.postcode%></p>
-    <p><%=@event.description%></p>
 
     <ul class="list-inline">
       <li> <%= link_to "Back to list", events_path, class:"btn navbar-wagon-button"%> </li>
@@ -20,7 +19,7 @@
     <% if @event.users.first.nil? %>
     <p>No one is attending the event yet</p>
   <% else %>
-    <div class="containter">
+    <div class="container">
       <div class="row">
         <% @event.users.each do |user| %>
         <div class="attending-row">
@@ -34,8 +33,19 @@
     <% end %>
   </div>
 </div>
-<div id="map" style="width: 60%; height: 600px; border: 5px solid red;"></div>
 
+<div class="container" id="event-map">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <div id="map" style="width: 100%; height: 450px;"></div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <h3><%=@event.title%></h3>
+      <p><%=@event.address + "," + " " + @event.city%></p>
+      <p><%=@event.description%></p>
+    </div>
+  </div>
+</div>
 
 <% content_for(:after_js) do %>
   <script>
