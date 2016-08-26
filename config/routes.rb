@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :events do
     resources :attendances, only: [:create]
   end
-  root to: 'events#index'
+  root to: 'pages#index'
   get 'contact', to: 'pages#contact'
 
   get '/dashboards', to: 'dashboards#index'
