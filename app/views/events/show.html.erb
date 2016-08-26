@@ -8,7 +8,6 @@
 
 
     <p><%=@event.postcode%></p>
-    <p><%=@event.description%></p>
 
     <ul class="list-inline">
       <li> <%= link_to "Back to list", events_path, class:"btn navbar-wagon-button"%> </li>
@@ -41,7 +40,7 @@
       <div id="map" style="width: 100%; height: 450px;"></div>
     </div>
     <div class="col-xs-12 col-md-6 col-md-3">
-      <h2><%=@event.title%></h2>
+      <h3><%=@event.title%></h3>
       <p><%=@event.address + "," + " " + @event.city%></p>
       <p><%=@event.description%></p>
     </div>
