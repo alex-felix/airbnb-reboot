@@ -28,11 +28,11 @@ class EventsController < ApplicationController
 
   def create
     new_event_params = event_params
-    new_event_params['starts_at_day'] = Date.strptime(event_params['starts_at_day'], '%m/%d/%Y')
-    new_event_params['ends_at_day'] = Date.strptime(event_params['ends_at_day'], '%m/%d/%Y')
+    new_event_params['starts_at_day'] = Date.strptime(event_params['starts_at_day'], '%m/%d/%Y') unless event_params['starts_at_day'].blank?
+    new_event_params['ends_at_day'] = Date.strptime(event_params['ends_at_day'], '%m/%d/%Y') unless event_params['starts_at_day'].blank?
     @event = Event.new(new_event_params)
     @event.user = current_user
-    if @event.save!
+    if @event.save
       redirect_to events_path
     else
       render :new
