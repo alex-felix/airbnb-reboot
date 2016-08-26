@@ -1,0 +1,13 @@
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path event.photo, height: 300, width: 400 %>');">
+  <div class="card-category"><%= event.interests %></div>
+  <div class="card-description">
+    <h2><%= event.title.capitalize %></h2>
+    <p><%= event.postcode %></p>
+  </div>
+  <%= link_to "", event_path(id: event.id), class:"card-link" %>
+  <% if event.user.facebook_picture_url %>
+  <%= image_tag event.user.facebook_picture_url, class: "card-user avatar-large" %>
+  <% else %>
+  <%= image_tag 'unknown-user.png', class: "card-user avatar-large" %>
+  <% end %>
+</div>
