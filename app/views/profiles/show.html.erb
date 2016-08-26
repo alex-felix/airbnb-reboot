@@ -1,9 +1,11 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= @user.photo.file ? cl_image_path(@user.photo, height: 300, width: 400) : 'http://lorempixel.com/400/200/people/9' %>');">
+</div>
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2">
       <h1>
-        Welcome <%= @user.first_name%> <%= @user.last_name%>
-        <% avatar_url = @user.facebook_picture_url || @user.photo %>
+        <%= @user.first_name%> <%= @user.last_name%>'s page
+        <% avatar_url = @user.facebook_picture_url || "unknown-user.png" %>
         <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu" %>
       </h1>
     </div>
@@ -11,7 +13,7 @@
 </div>
 <div class="container">
   <h2>
-    <%= @user.first_name%>' organises these parties'
+    <%= @user.first_name %> organises these parties'
   </h2>
 </div>
-<%= render 'shared/my_events' %>
+<%= render 'shared/his_events.html.erb' %>
