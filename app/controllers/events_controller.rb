@@ -2,6 +2,7 @@
 class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+
   def index
     # @events = Event.all
     @events = Event.where.not(latitude: nil, longitude: nil)
@@ -26,7 +27,10 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
+    new_event_params = event_params
+    new_event_params['starts_at_day'] = Date.strptime(event_params['starts_at_day'], '%m/%d/%Y')
+    new_event_params['ends_at_day'] = Date.strptime(event_params['ends_at_day'], '%m/%d/%Y')
+    @event = Event.new(new_event_params)
     @event.user = current_user
     if @event.save!
       redirect_to events_path

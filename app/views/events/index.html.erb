@@ -12,7 +12,7 @@
     <div class="row">
        <% @events.each do |e| %>
       <div class="col-xs-12 col-sm-6 col-lg-4">
-        <%= render "card", event: e %>
+        <%= render "/shared/card", event: e %>
       </div>
        <% end %>
     </div>

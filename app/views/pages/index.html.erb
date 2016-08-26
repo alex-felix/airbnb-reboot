@@ -1,8 +1,9 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('/../../assets/images/party.jpg');">
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path "Party.jpg" %>');">
   <div class="banner-content">
     <h1>Keep it real!</h1>
     <p>Find a cool event near you or post yours!</p>
-    <a class="btn btn-primary btn-lg">Meet New People</a>
+    <%= link_to "Meet New People", events_path, {class: "navbar-wagon-item navbar-wagon-button btn home-btn-font"}%>
   </div>
 </div>
 <div class="light-grey-background wrapper">
