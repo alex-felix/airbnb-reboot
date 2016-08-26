@@ -15,10 +15,10 @@
             <p><%= attend_events.event.interests%></p>
           </li>
           <li>
-            <p>Starts at<%= attend_events.event.starts_at_day%> at <%= attend_events.event.starts_at_time%></p>
+            <p>Starts at  <%= attend_events.event.starts_at_day.strftime('%v')%> at a <%= attend_events.event.starts_at_time.strftime('%R')%></p>
           </li>
           <li>
-            <p>Ends at<%= attend_events.event.ends_at_day%> at <%= attend_events.event.ends_at_time%></p>
+            <p>Ends at  <%= attend_events.event.ends_at_day.strftime('%v')%> at <%= attend_events.event.ends_at_time.strftime('%R')%></p>
           </li>
           <li>
             <p>Location : <%= attend_events.event.address%>, <%= attend_events.event.postcode%> <%= attend_events.event.city%></p>
