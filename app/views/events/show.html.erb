@@ -8,6 +8,7 @@
   <div class="banner-content">
     <h1><%=@event.title%></h1>
     <h2><%=@event.interests%></h1>
+    <p>Number of attendees : <%= @event.attendances.count%></p>
     <% avatar_url = @event.user.facebook_picture_url || 'unknown-user.png' %>
     <h3>Created by <%=@event.user.first_name || '-no first name supplied-' %> <%= image_tag avatar_url, class: "avatar-large" %></h3>
 
