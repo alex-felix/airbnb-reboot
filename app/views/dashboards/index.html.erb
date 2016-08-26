@@ -1,23 +1,27 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-8 col-md-offset-2">
-      <h1>
-        Welcome <%= @user.first_name%> <%= @user.last_name%>
-        <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
-        <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu" %>
-      </h1>
+<div class="dash-bg">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <h1>
+          Welcome <%= @user.first_name%> <%= @user.last_name%>
+          <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+          <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu" %>
+        </h1>
+      </div>
     </div>
   </div>
+  <!-- showing the details -->
+  <%= render 'shared/profile_details' %>
+  <!-- Showing the events user has created -->
+  <div class="container">
+    <h3>I have created these events</h3>
+  </div>
+  <%= render 'shared/my_events' %>
+  <!-- Showing the events user will attend -->
+  <div class="container">
+  <h3>I am attending these events</h3>
+  </div>
+  <%= render 'shared/party-i-attend' %>
 </div>
-<!-- showing the details -->
-<%= render 'shared/profile_details' %>
-<!-- Showing the events user has created -->
-<div class="container">
-  <h3>I have created these events</h3>
-</div>
-<%= render 'shared/party-i-attend' %>
-<!-- Showing the events user will attend -->
-<div class="container">
-<h3>I am attending these events</h3>
-</div>
-<%= render 'shared/my_events' %>
+
