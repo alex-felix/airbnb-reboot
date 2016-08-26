@@ -8,9 +8,12 @@
   <div class="banner-content">
     <h1><%=@event.title%></h1>
     <h2><%=@event.interests%></h1>
+    <% if @event.user.photo.file %>
+        <h3>Created by <%=@event.user.first_name || '-no first name supplied-' %> <%= cl_image_tag(@event.user.photo, class: "avatar-large", width: 45, height: 45, crop: :thumb, gravity: :face) %></h3>
+    <% else %>
     <% avatar_url = @event.user.facebook_picture_url || 'unknown-user.png' %>
     <h3>Created by <%=@event.user.first_name || '-no first name supplied-' %> <%= image_tag avatar_url, class: "avatar-large" %></h3>
-
+    <% end %>
 
     <p><%=@event.postcode%></p>
 
