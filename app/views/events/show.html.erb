@@ -10,7 +10,10 @@
     <h2><%=@event.interests%></h1>
     <p>Number of attendees : <%= @event.attendances.count%></p>
     <% avatar_url = @event.user.facebook_picture_url || 'unknown-user.png' %>
-    <h3>Created by <%=@event.user.first_name || '-no first name supplied-' %> <%= image_tag avatar_url, class: "avatar-large" %></h3>
+    <h3>Created by
+    <%= link_to profile_path(@event.user), class:"navbar-wagon-link3" do %>
+      <%=@event.user.first_name || '-no first name supplied-' %> <%= image_tag avatar_url, class: "avatar-large" %></h3>
+    <% end %>
 
 
     <p><%=@event.postcode%></p>
@@ -25,17 +28,17 @@
     <% if @event.users.first.nil? %>
     <p>No one is attending the event yet</p>
   <% else %>
-    <div class="container">
-      <div class="row">
-        <% @event.users.each do |user| %>
-        <div class="attending-row">
-        <% avatar_url = user.facebook_picture_url || 'unknown-user.png' %>
-        <%= image_tag avatar_url, :class => "avatar-large"%>
-        <%= user.first_name || '-no first name supplied-' %>
-        </div>
-        <% end %>
-      </div>
-    </div>
+    <ul class="list-inline">
+      <% @event.users.each do |user| %>
+      <li class="attending-row">
+        <%= link_to profile_path(user), class:"navbar-wagon-link2" do %>
+          <% avatar_url = user.facebook_picture_url || 'unknown-user.png' %>
+          <%= image_tag avatar_url, :class => "avatar-large"%>
+          <%= user.first_name || '-no first name supplied-' %>
+         <% end %>
+      </li>
+      <% end %>
+    </ul>
     <% end %>
   </div>
 </div>
