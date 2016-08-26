@@ -20,8 +20,8 @@
           <li>
             <p>Location : <%= event.address%>, <%= event.postcode%> <%= event.city%></p>
           </li>
-          <a href="<% event_path(event) %>" class="btn btn-primary btn-block">Update my event</a>
-          <a href="" class="btn btn-info btn-block">Promote my event</a>
+          <%= link_to "Update my event", event_path(event), {class: "btn btn-primary btn-block", style: "border-radius: 50px"}%>
+          <a href="http://www.facebook.com" class="btn btn-info btn-block" style="border-radius: 50px">Promote this event</a>
         </ul>
       </div>
       <div class="col-xs-12 col-md-8 image-center-col">
