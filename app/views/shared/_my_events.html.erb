@@ -9,6 +9,9 @@
             <p><%= event.description%></p>
           </li>
           <li>
+            <p>Number of attendees : <%= event.attendances.count%></p>
+          </li>
+          <li>
             <p><%= event.interests%></p>
           </li>
           <li>
@@ -21,6 +24,7 @@
             <p>Location : <%= event.address%>, <%= event.postcode%> <%= event.city%></p>
           </li>
           <%= link_to "Update my event", edit_event_path(event), {class: "btn btn-primary btn-block", style: "border-radius: 50px"}%>
+          <%= link_to "see my event", event_path(event), {class: "btn btn-primary btn-block", style: "border-radius: 50px"}%>
           <a href="http://www.facebook.com" class="btn btn-info btn-block" style="border-radius: 50px">Promote this event</a>
         </ul>
       </div>
