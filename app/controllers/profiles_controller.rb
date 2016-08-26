@@ -27,6 +27,6 @@ class ProfilesController < ApplicationController
   # To filter hacking forms
   def user_params
     params.require(:user).permit(:first_name, :last_name, :address, :gender,
-     :postcode, :city, :phone_number, :date_of_birth, :email )
+     :postcode, :city, :phone_number, :date_of_birth, :email, :photo, :photo_cache )
   end
 end
