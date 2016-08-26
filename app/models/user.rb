@@ -30,7 +30,7 @@ class User < ApplicationRecord
 
   private
 
-  # def lower_first_name_capitalize
+  # def lower_first_name_capitalizes
   #   self.first_name = first_name.downcase.capitalize
   # end
 
